@@ -28,9 +28,9 @@ declare namespace Button {
          */
         isSmall?: boolean;
         /**
-         * Renders a toggled button style.
+         * Renders a pressed button style.
          */
-        isToggled?: boolean;
+        isPressed?: boolean;
         /**
          * Indicates activity while a action is being performed.
          */

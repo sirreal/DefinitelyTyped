@@ -75,9 +75,23 @@ interface MyCompleteOption {
 <C.Button href="#foo" download="foo.txt" isSmall>
     Anchor Button
 </C.Button>;
-<C.Button autoFocus isDestructive isLarge>
+<C.Button autoFocus isDestructive isLarge isPressed>
     Button Button
 </C.Button>;
+// Own props
+<C.Button
+    className="button"
+    disabled
+    isBusy
+    isDefault
+    isDestructive
+    isLarge
+    isLink
+    isPressed
+    isPrimary
+    isSmall
+    isTertiary
+/>;
 
 //
 // button-group
@@ -542,14 +556,20 @@ const kbshortcuts = {
     label="User type"
     help="The type of the current user"
     selected="a"
-    options={[{ label: 'Author', value: 'a' }, { label: 'Editor', value: 'e' }]}
+    options={[
+        { label: 'Author', value: 'a' },
+        { label: 'Editor', value: 'e' },
+    ]}
     onChange={value => value && console.log(value.toUpperCase())}
 />;
 <C.RadioControl
     label="User type"
     help="The type of the current user"
     selected={{ foo: 'bar' }}
-    options={[{ label: 'Author', value: { foo: 'bar' } }, { label: 'Editor', value: { foo: 'baz' } }]}
+    options={[
+        { label: 'Author', value: { foo: 'bar' } },
+        { label: 'Editor', value: { foo: 'baz' } },
+    ]}
     onChange={value => value && console.log(value.foo)}
 />;
 
@@ -603,14 +623,22 @@ const kbshortcuts = {
 <C.SelectControl
     label="Size"
     value="50%"
-    options={[{ label: 'Big', value: '100%' }, { label: 'Medium', value: '50%' }, { label: 'Small', value: '25%' }]}
+    options={[
+        { label: 'Big', value: '100%' },
+        { label: 'Medium', value: '50%' },
+        { label: 'Small', value: '25%' },
+    ]}
     onChange={size => console.log(size)}
 />;
 <C.SelectControl
     label="Size"
     value={['50%']}
     multiple
-    options={[{ label: 'Big', value: '100%' }, { label: 'Medium', value: '50%' }, { label: 'Small', value: '25%' }]}
+    options={[
+        { label: 'Big', value: '100%' },
+        { label: 'Medium', value: '50%' },
+        { label: 'Small', value: '25%' },
+    ]}
     onChange={size => console.log(size)}
 />;
 
